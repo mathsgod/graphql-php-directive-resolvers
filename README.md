@@ -1,3 +1,50 @@
+# Example
+Schema:
+```
+directive @upper on FIELD_DEFINITION
+
+schema {
+    query: Query
+}
+
+type Query {
+    me: User
+}
+
+type User {
+    first_name:String @upper
+    last_name:String
+}
+```
+
+
+Input: 
+```
+query{
+    me{
+        first_name
+    }
+}
+```
+
+Result:
+
+```
+Array
+(
+    [data] => Array
+        (
+            [me] => Array
+                (
+                    [first_name] => MY FIRST NAME
+                )
+
+        )
+
+)
+```
+
+# Code
 ```php
 
 require_once(__DIR__ . "/../vendor/autoload.php");
@@ -50,51 +97,3 @@ $result = $result->toArray();
 
 print_r($result);
 ```
-
-# Example
-Schema:
-```
-directive @upper on FIELD_DEFINITION
-
-schema {
-    query: Query
-}
-
-type Query {
-    me: User
-}
-
-type User {
-    first_name:String @upper
-    last_name:String
-}
-```
-
-
-Input: 
-```
-query{
-    me{
-        first_name
-    }
-}
-```
-
-Result:
-
-```
-Array
-(
-    [data] => Array
-        (
-            [me] => Array
-                (
-                    [first_name] => MY FIRST NAME
-                )
-
-        )
-
-)
-```
-
-
