@@ -24,9 +24,10 @@ gql;
 $schema = BuildSchema::build($schema_gql);
 
 $schema->getType("Query")->getField("me")->resolveFn = function ($root, $args, $context, $info) {
-    return ["first_name" => "my fist_name"];
+    return ["first_name" => "my fisrt name"];
 };
 
+//--- resolver 
 $directiveResolvers = [
     "upper" => function ($next, $source, $args, $context) {
         return $next()->then(function ($str) {
@@ -34,6 +35,8 @@ $directiveResolvers = [
         });
     }
 ];
+
+// ----------------------
 
 attachDirectiveResolvers($schema, $directiveResolvers);
 

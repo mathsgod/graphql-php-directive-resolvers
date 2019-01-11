@@ -24,7 +24,7 @@ gql;
 $schema = BuildSchema::build($schema_gql);
 
 $schema->getType("Query")->getField("me")->resolveFn = function ($root, $args, $context, $info) {
-    return ["first_name" => "my fist_name"];
+    return ["first_name" => "my first name"];
 };
 
 $directiveResolvers = [
@@ -50,3 +50,51 @@ $result = $result->toArray();
 
 print_r($result);
 ```
+
+# Example
+Schema:
+```
+directive @upper on FIELD_DEFINITION
+
+schema {
+    query: Query
+}
+
+type Query {
+    me: User
+}
+
+type User {
+    first_name:String @upper
+    last_name:String
+}
+```
+
+
+Input: 
+```
+query{
+    me{
+        first_name
+    }
+}
+```
+
+Result:
+
+```
+Array
+(
+    [data] => Array
+        (
+            [me] => Array
+                (
+                    [first_name] => MY FIRST NAME
+                )
+
+        )
+
+)
+```
+
+
