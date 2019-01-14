@@ -1,6 +1,7 @@
 {
     "name": "mathsgod/graphql-php-directive-resolvers",
     "type": "library",
+    "keywords": ["graphql"],
     "require": {
         "webonyx/graphql-php": "^0.12.6",
         "guzzlehttp/promises": "^1.3"
