@@ -15,5 +15,5 @@
         "files": [
             "src/function/function.php"
         ]
-    }
+    },"license": "MIT"
 }
