@@ -1,3 +1,5 @@
+![PHP Composer](https://github.com/mathsgod/graphql-php-directive-resolvers/workflows/PHP%20Composer/badge.svg?branch=master)
+
 # Example
 Schema:
 ```
