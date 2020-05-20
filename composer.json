@@ -1,7 +1,10 @@
 {
     "name": "mathsgod/graphql-php-directive-resolvers",
+    "description": "GraphQL directive resolver",
     "type": "library",
-    "keywords": ["graphql"],
+    "keywords": [
+        "graphql"
+    ],
     "require": {
         "webonyx/graphql-php": "^0.12.6",
         "guzzlehttp/promises": "^1.3"
@@ -16,5 +19,12 @@
         "files": [
             "src/function/function.php"
         ]
-    },"license": "MIT"
+    },
+    "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "scripts": {
+        "test": "phpunit tests"
+    }
 }

@@ -1,0 +1,14 @@
+directive @upper on FIELD_DEFINITION
+
+schema {
+    query: Query
+}
+
+type Query {
+    me: User
+}
+
+type User {
+    first_name:String @upper
+    last_name:String
+}

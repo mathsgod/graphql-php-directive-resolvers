@@ -1,4 +1,5 @@
-<?
+<?php
+
 use GraphQL\Language\AST\DirectiveNode;
 use GuzzleHttp\Promise\Promise;
 
